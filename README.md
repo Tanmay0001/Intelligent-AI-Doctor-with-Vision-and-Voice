@@ -1,154 +1,72 @@
-# Project Setup Guide
+# Intelligent AI Doctor with Vision and Voice
 
-This guide provides step-by step instructions to set up your project environment, including the installation of FFmpeg and PortAudio across macOS, Linux, and Windows, as well as setting up a Python virtual environment using Pipenv, pip, or conda.
-
-## Table of Contents
-
-1. [Installing FFmpeg and PortAudio](#installing-ffmpeg-and-portaudio)
-   - [macOS](#macos)
-   - [Linux](#linux)
-   - [Windows](#windows)
-2. [Setting Up a Python Virtual Environment](#setting-up-a-python-virtual-environment)
-   - [Using Pipenv](#using-pipenv)
-   - [Using pip and venv](#using-pip-and-venv)
-   - [Using Conda](#using-conda)
-3. [Running the application](#project-phases-and-python-commands)
-
-## Installing FFmpeg and PortAudio
-
-### macOS
-
-1. **Install Homebrew** (if not already installed):
-
-   ```bash
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   ```
-
-2. **Install FFmpeg and PortAudio:**
-
-   ```bash
-   brew install ffmpeg portaudio
-   ```
-
-
-### Linux
-For Debian-based distributions (e.g., Ubuntu):
-
-1. **Update the package list**
-
-```
-sudo apt update
-```
-
-2. **Install FFmpeg and PortAudio:**
-```
-sudo apt install ffmpeg portaudio19-dev
-```
-
-### Windows
-
-#### Download FFmpeg:
-1. Visit the official FFmpeg download page: [FFmpeg Downloads](https://ffmpeg.org/download.html)
-2. Navigate to the Windows builds section and download the latest static build.
-
-#### Extract and Set Up FFmpeg:
-1. Extract the downloaded ZIP file to a folder (e.g., `C:\ffmpeg`).
-2. Add the `bin` directory to your system's PATH:
-   - Search for "Environment Variables" in the Start menu.
-   - Click on "Edit the system environment variables."
-   - In the System Properties window, click on "Environment Variables."
-   - Under "System variables," select the "Path" variable and click "Edit."
-   - Click "New" and add the path to the `bin` directory (e.g., `C:\ffmpeg\bin`).
-   - Click "OK" to apply the changes.
-
-#### Install PortAudio:
-1. Download the PortAudio binaries from the official website: [PortAudio Downloads](http://www.portaudio.com/download.html)
-2. Follow the installation instructions provided on the website.
+**Author:** Tanmay Mishra  
+**GitHub:** [https://github.com/Tanmay0001/Intelligent-AI-Doctor-with-Vision-and-Voice](https://github.com/Tanmay0001/Intelligent-AI-Doctor-with-Vision-and-Voice)  
+**Hugging Face Space:** [https://huggingface.co/spaces/Tanmaymishra09/Intelligent-AI-Doctor](https://huggingface.co/spaces/Tanmaymishra09/Intelligent-AI-Doctor)
 
 ---
 
-## Setting Up a Python Virtual Environment
+## Overview
 
-### Using Pipenv
-1. **Install Pipenv (if not already installed):**  
-```
-pip install pipenv
-```
+**Intelligent AI Doctor** is an AI based application that integrates **llm** and **voice processing** to assist doctors in diagnosing diseases. The application allows users to provide patient information through **voice** or **text input** and uses AI models to analyze symptoms and provide insights or recommendations.
 
-2. **Install Dependencies with Pipenv:** 
+This project demonstrates the integration of:
 
-```
-pipenv install
-```
-
-3. **Activate the Virtual Environment:** 
-
-```
-pipenv shell
-```
+- **Text-to-Speech and Speech-to-Text processing**  
+- **Image analysis for skin or other medical conditions**  
+- **AI driven recommendation and diagnosis suggestions**  
+- **Interactive web interface with Gradio**
 
 ---
 
-### Using `pip` and `venv`
-#### Create a Virtual Environment:
-```
-python -m venv venv
-```
+## Features
 
-#### Activate the Virtual Environment:
-**macOS/Linux:**
-```
-source venv/bin/activate
-```
-
-**Windows:**
-```
-venv\Scripts\activate
-```
-
-#### Install Dependencies:
-```
-pip install -r requirements.txt
-```
+- **Voice Interaction:** Users can describe symptoms via voice and the AI can respond naturally using text-to-speech.  
+- **Image Analysis:** Upload images of affected areas for automated analysis.  
+- **Text Input Option:** Alternative to voice, users can type symptoms for diagnosis.  
+- **Gradio Web Interface:** User friendly interface for real time interaction.  
+- **Cross platform Deployment:** Deployed on Hugging Face Spaces for cloud access.
 
 ---
 
-### Using Conda
-#### Create a Conda Environment:
-```
-conda create --name myenv python=3.11
-```
+# Getting Started
 
-#### Activate the Conda Environment:
-```
-conda activate myenv
-```
+## Set Up Virtual Environment
+```python -m venv venv
+.\venv\Scripts\activate    # Windows
+source venv/bin/activate   # macOS/Linux```
 
-#### Install Dependencies:
-```
-pip install -r requirements.txt
-```
+## Install Dependencies
+```pip install -r requirements.txt```
+
+## Running the Application Locally
+```python app.py```
 
 
-# Project Phases and Python Commands
+Open the URL displayed in your terminal (usually http://127.0.0.1:7860) to access the interface.
 
-## Phase 1: Brain of the doctor
-```
-python brain_of_the_doctor.py
-```
+You can test voice input, text input and image upload features.
 
-## Phase 2: Voice of the patient
-```
-python voice_of_the_patient.py
-```
+Deployment on Hugging Face Spaces
 
-## Phase 3: Voice of the doctor
-```
-python voice_of_the_doctor.py
-```
+Ensure your main script is named app.py.
 
-## Phase 4: Setup Gradio UI
-```
-python gradio_app.py
-```
+Push the project to your Hugging Face Space repository.
 
+Hugging Face automatically detects app.py and builds the space.
+
+If the build doesn’t start automatically, go to: Settings → Advanced → Restart Space.
+
+
+
+## Technologies Used
+
+Python 3.x
+
+Gradio for web interface
+
+PyTorch / TensorFlow (for AI/ML models)
+
+SpeechRecognition / pyttsx3 / ElevenLabs API for voice processing
+
+OpenCV / PIL for image handling

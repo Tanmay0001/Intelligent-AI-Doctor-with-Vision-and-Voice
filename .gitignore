@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+venv/
+.env
+
+# Audio files
+*.mp3
+*.wav
+
+# Pipenv
+Pipfile.lock
+
+# VSCode
+.vscode/
